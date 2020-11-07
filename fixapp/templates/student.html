@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>教室报修</title>
+</head>
+ {% load static %}
+<body style="background-image: url({% static 'b2.jpg' %});
+        background-size:100% 100%;background-position:55% 60%;background-repeat:no-repeat;"  >
+
+    <img src="{% static '西电.jpg' %}"  width="320" height="90">
+
+    <h1 align="center" >提交报修内容</h1>
+    <p style="text-align:center;color:gray;font-size:10px;"   >
+        (<span style="color: red;font-weight:bold">*</span>
+        为必填内容
+        )
+    </p>
+
+<form action="/fix/student/" method="post" enctype="multipart/form-data">  <!--提交报修文字内容-->
+    <p align="center" >
+    {% csrf_token %}             <!--提交资源的必须请求-->
+    我的名字 &nbsp;&nbsp;<input type="text" name="stu_name"><br>
+    我的学号 &nbsp;&nbsp;<input type="text" name="stu_id"><br>
+    联系电话 &nbsp;&nbsp;<input type="text" name="phone"><br>
+    联系邮箱 &nbsp;&nbsp;<input type="text" name="email"><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    报修教室 &nbsp;&nbsp;<input type="text" name="class_id">&nbsp;&nbsp;
+     <span style="color: red;font-weight:bold">*</span>  <!设置段内格式>
+     <br>
+
+    报修内容
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<!--为了对齐的笨办法-->
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <textarea name="msg" style="width:175px;height:60px;"></textarea> &nbsp;&nbsp;
+    <span style="color: red;font-weight:bold">*</span>
+    <br>
+
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;现场照片
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <input type="file" name="photo"><br><br><br>
+     <input type="submit" value="报修提交">
+</p>
+
+</form>
+
+
+<form action="/fix/teacher/" method="get">
+    <p align="center">
+        <input type="submit" value="报修查看" />
+    </p>
+</form>
+
+<!--get 是向服务器请求资源-->
+<!--post 是向服务器提交资源-->
+
+{% load static %}
+<img src="{% static 'left.jpg' %}" style="float:left;" width="98" height="95">
+<img src="{% static 'right.jpg' %}"style="float:right; "width="100" height="95">
+
+<!--网页弹出警告-->
+{% if messages %}
+<script>
+        {% for msg in messages %}
+            alert('{{ msg.message }}');
+        {% endfor %}
+</script>
+{% endif %}
+
+</body>
+
+</html>

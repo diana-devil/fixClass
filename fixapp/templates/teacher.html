@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>报修查看</title>
+</head>
+
+{% load static %}
+<body style="background-image: url({% static 'b2.jpg' %});
+        background-size:100% 100%;background-position:55% 60%;background-repeat:no-repeat;"  >
+
+    <img src="{% static '西电.jpg' %}"  width="320" height="93">
+
+    <h1 align="center">报修获取</h1>
+
+<form action="/fix/teacher/" method="get">
+    <p align="center">
+    报修教室 <input type="text" name="class_id" /><br>
+    <input type="submit" value="报修获取" >
+    </p>
+</form>
+
+<table  align="center" border="1">
+    <thead>
+        <th>报修时间</th>
+        <th>学生姓名</th>
+        <th>学生学号</th>
+        <!--<th>联系电话</th>-->
+        <!--<th>联系邮箱</th>-->
+        <th>报修教室</th>
+        <th>报修具体内容</th>
+        <th>维修状态</th>
+    </thead>
+    <br>
+    <tbody>
+        {% for line in fix_class_list %}
+        <tr>
+            <td>{{ line.time }}</td>
+            <td align="center">{{ line.stu_name }}</td>
+            <td align="center">{{ line.stu_id }}</td>
+            <!--<td align="center">{{ line.phone }}</td>-->
+            <!--<td align="center">{{ line.email }}</td>-->
+            <td align="center">{{ line.class_id }}</td>
+            <td align="center">{{ line.msg }}</td>
+            {% if line.flag %}     <!--line.flag=0,表示未维修-->
+            <td>已维修</td>
+            {% else %}            <!--line.flag=1,表示已经维修-->
+            <td>未维修</td>
+            {% endif %}
+
+        </tr>
+
+        {% endfor %}
+    </tbody>
+</table>
+
+<form action="/fix/student/" method="get">
+    <p align="center">
+        <input type="submit" value="继续填写报修" />
+    </p>
+</form>
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <title>教室教学设备快速报修</title>
+                <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="renderer" content="webkit" />
+                    <link rel="stylesheet" href="/css/fd89ad8.css" />
+    
+            <link rel="icon" href="/images/17d86be.png" type="image/x-icon" />
+    
+    
+    </head>
+    <body>
+            <div id="main">
+        <div id="header">
+                            <div id="header_login">
+                    <div id="login_layout">
+                                                    <a href="/login"
+                               class="button button-rounded button-flat1">管理员入口</a>
+                                            </div>
+                </div>
+                <div id="logo">
+                                        <a href="/"><img src="/images/ac1a756.png" alt="LOGO" /></a>
+                                    </div>
+                <div id="navigation">
+                    <ul id="menu">
+                                                    <li><a  id="target"                                     href="/">我要报修</a></li>
+                            <li><a                                     href="/view">报修查询</a></li>
+                                                                                                                    <li><a                                     href="/about">关于</a></li>
+                                            </ul>
+                    <div id="time_tmp"></div>
+                </div>
+                <p id="line"></p>
+                    </div>
+
+        <div id="middle">
+            <div id="content">
+                    <table>
+    <tr>
+
+    <td valign="top">
+    <div id="right">
+        <div id="mal_title">
+            <h2>填写报修单</h2>
+        </div>
+        <div id="mal_tips">
+            <p>带 <em>*</em> 标记为必填项</p>
+        </div>
+        <script>
+            var page = 2;
+            var isPost = false;
+            var submit_success = false;
+                    </script>
+        <span id="postres" style="display: none">[]</span>
+        <form name="form" method="post" action="" novalidate="novalidate">
+        <div id="mal_base_info">
+            <h3>基本信息<span class="input_tip">(如果教学楼或教室不在选择中，请选择'其它'一项，并在故障描述中加以说明。)</span></h3>
+            <table>
+                <tr>
+                    <td width="20%">教&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;楼：</td>
+                    <td width="30%">
+                        <input type="text" id="form_building" name="form[building]" required="required" class="building_hidden" />
+                        <select class="building">
+                            <option value="-1">请选择教学楼</option>
+                                                                                        <option value="1" >一教</option>
+                                                            <option value="2"                                         selected
+                                        >二教</option>
+                                                            <option value="3" >三教</option>
+                                                            <option value="4" >五教</option>
+                                                    </select>
+                        <em>*</em>
+                    </td>
+                    <td width="20%">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        教
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        室：
+                    </td>
+                    <td width="30%">
+                        <input type="text" id="form_classroom" name="form[classroom]" required="required" class="classroom_hidden" />
+                        <select class="classroom">
+                            <option value="-1" selected>请选择教室</option>
+                                                                                            <option value="12">2103</option>
+                                                                <option value="13">2104</option>
+                                                                <option value="14">2105</option>
+                                                                <option value="15">2106</option>
+                                                                <option value="16">2121</option>
+                                                                <option value="153">2202</option>
+                                                                <option value="154">2203</option>
+                                                                <option value="17">2204</option>
+                                                                <option value="18">2205</option>
+                                                                <option value="19">2206</option>
+                                                                <option value="20">2207</option>
+                                                                <option value="21">2208</option>
+                                                                <option value="22">2209</option>
+                                                                <option value="23">2210</option>
+                                                                <option value="24">2211</option>
+                                                                <option value="156">2301</option>
+                                                                <option value="155">2302</option>
+                                                                <option value="26">2303</option>
+                                                                <option value="27">2304</option>
+                                                                <option value="28">2305</option>
+                                                                <option value="29">2306</option>
+                                                                <option value="30">2307</option>
+                                                                <option value="31">2308</option>
+                                                                <option value="32">2309</option>
+                                                                <option value="33">2321</option>
+                                                                <option value="158">2401</option>
+                                                                <option value="157">2402</option>
+                                                                <option value="34">2403</option>
+                                                                <option value="35">2404</option>
+                                                                <option value="36">2405</option>
+                                                                <option value="37">2406</option>
+                                                                <option value="38">2407</option>
+                                                                <option value="39">2408</option>
+                                                                <option value="40">2409</option>
+                                                                <option value="41">2421</option>
+                                                                <option value="159">2502</option>
+                                                                <option value="42">2504</option>
+                                                                <option value="43">2505</option>
+                                                                <option value="44">2506</option>
+                                                                <option value="45">2507</option>
+                                                                <option value="46">2508</option>
+                                                                <option value="47">2509</option>
+                                                                <option value="160">2602</option>
+                                                                <option value="48">2603</option>
+                                                                <option value="49">2604</option>
+                                                                <option value="50">2605</option>
+                                                                <option value="51">2606</option>
+                                                                <option value="52">2607</option>
+                                                                <option value="161">2608</option>
+                                                                <option value="162">2609</option>
+                                                                <option value="53">2621</option>
+                                                                <option value="54">2721</option>
+                                                                <option value="55">其它</option>
+                                                                                    </select>
+                        <em>*</em>
+                    </td>
+                </tr>
+                <tr>
+                    <td>您的联系方式：</td>
+                    <td colspan="3">
+                        <textarea id="form_subUser" name="form[subUser]" required="required" class="username" placeHolder="请输入您的电子邮件地址/联系电话！" rows="1"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="mal_detail_info">
+            <h3>故障描述<span  class="input_tip">(请输入故障的详细信息，您也可以从常见故障中点击添加。)</span></h3>
+            <div class="mal_info_container">
+                <table><tr><td valign="top">
+                <div class="mail_detail_text_container">
+                    <textarea id="form_detail" name="form[detail]" required="required" class="mal_detail_text"></textarea>
+                </div>
+                </td><td width="32%" valign="top">
+                <div id="mal_shortcut_info">
+                    <span>常见故障:</span><br>
+                                                                                        <span class="normal">投影仪故障</span>                                                                     <span class="normal">桌椅故障</span> <br>                                                                    <span class="normal">照明故障</span>                                                                     <span class="normal">自助打印机故障</span> <br>                                                                    <span class="normal">计算机故障</span>                                                                     <span class="normal">音响故障</span> <br>                                                                    <span class="normal">黑板故障</span>                                     </div>
+                </td></tr></table>
+            </div>
+        </div>
+        <div id="mal_bottom">
+            <button type="submit" id="submit" class="button button-rounded glow">提交</button>
+            <em id="count_down_tip"></em>
+            <em id="some_info">{&quot;1&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;1101&quot;},{&quot;id&quot;:2,&quot;name&quot;:&quot;1102&quot;},{&quot;id&quot;:3,&quot;name&quot;:&quot;1201&quot;},{&quot;id&quot;:4,&quot;name&quot;:&quot;1202&quot;},{&quot;id&quot;:5,&quot;name&quot;:&quot;1203&quot;},{&quot;id&quot;:7,&quot;name&quot;:&quot;1222&quot;},{&quot;id&quot;:8,&quot;name&quot;:&quot;1301&quot;},{&quot;id&quot;:9,&quot;name&quot;:&quot;1302&quot;},{&quot;id&quot;:11,&quot;name&quot;:&quot;\u5176\u5b83&quot;}],&quot;2&quot;:[{&quot;id&quot;:12,&quot;name&quot;:&quot;2103&quot;},{&quot;id&quot;:13,&quot;name&quot;:&quot;2104&quot;},{&quot;id&quot;:14,&quot;name&quot;:&quot;2105&quot;},{&quot;id&quot;:15,&quot;name&quot;:&quot;2106&quot;},{&quot;id&quot;:16,&quot;name&quot;:&quot;2121&quot;},{&quot;id&quot;:153,&quot;name&quot;:&quot;2202&quot;},{&quot;id&quot;:154,&quot;name&quot;:&quot;2203&quot;},{&quot;id&quot;:17,&quot;name&quot;:&quot;2204&quot;},{&quot;id&quot;:18,&quot;name&quot;:&quot;2205&quot;},{&quot;id&quot;:19,&quot;name&quot;:&quot;2206&quot;},{&quot;id&quot;:20,&quot;name&quot;:&quot;2207&quot;},{&quot;id&quot;:21,&quot;name&quot;:&quot;2208&quot;},{&quot;id&quot;:22,&quot;name&quot;:&quot;2209&quot;},{&quot;id&quot;:23,&quot;name&quot;:&quot;2210&quot;},{&quot;id&quot;:24,&quot;name&quot;:&quot;2211&quot;},{&quot;id&quot;:156,&quot;name&quot;:&quot;2301&quot;},{&quot;id&quot;:155,&quot;name&quot;:&quot;2302&quot;},{&quot;id&quot;:26,&quot;name&quot;:&quot;2303&quot;},{&quot;id&quot;:27,&quot;name&quot;:&quot;2304&quot;},{&quot;id&quot;:28,&quot;name&quot;:&quot;2305&quot;},{&quot;id&quot;:29,&quot;name&quot;:&quot;2306&quot;},{&quot;id&quot;:30,&quot;name&quot;:&quot;2307&quot;},{&quot;id&quot;:31,&quot;name&quot;:&quot;2308&quot;},{&quot;id&quot;:32,&quot;name&quot;:&quot;2309&quot;},{&quot;id&quot;:33,&quot;name&quot;:&quot;2321&quot;},{&quot;id&quot;:158,&quot;name&quot;:&quot;2401&quot;},{&quot;id&quot;:157,&quot;name&quot;:&quot;2402&quot;},{&quot;id&quot;:34,&quot;name&quot;:&quot;2403&quot;},{&quot;id&quot;:35,&quot;name&quot;:&quot;2404&quot;},{&quot;id&quot;:36,&quot;name&quot;:&quot;2405&quot;},{&quot;id&quot;:37,&quot;name&quot;:&quot;2406&quot;},{&quot;id&quot;:38,&quot;name&quot;:&quot;2407&quot;},{&quot;id&quot;:39,&quot;name&quot;:&quot;2408&quot;},{&quot;id&quot;:40,&quot;name&quot;:&quot;2409&quot;},{&quot;id&quot;:41,&quot;name&quot;:&quot;2421&quot;},{&quot;id&quot;:159,&quot;name&quot;:&quot;2502&quot;},{&quot;id&quot;:42,&quot;name&quot;:&quot;2504&quot;},{&quot;id&quot;:43,&quot;name&quot;:&quot;2505&quot;},{&quot;id&quot;:44,&quot;name&quot;:&quot;2506&quot;},{&quot;id&quot;:45,&quot;name&quot;:&quot;2507&quot;},{&quot;id&quot;:46,&quot;name&quot;:&quot;2508&quot;},{&quot;id&quot;:47,&quot;name&quot;:&quot;2509&quot;},{&quot;id&quot;:160,&quot;name&quot;:&quot;2602&quot;},{&quot;id&quot;:48,&quot;name&quot;:&quot;2603&quot;},{&quot;id&quot;:49,&quot;name&quot;:&quot;2604&quot;},{&quot;id&quot;:50,&quot;name&quot;:&quot;2605&quot;},{&quot;id&quot;:51,&quot;name&quot;:&quot;2606&quot;},{&quot;id&quot;:52,&quot;name&quot;:&quot;2607&quot;},{&quot;id&quot;:161,&quot;name&quot;:&quot;2608&quot;},{&quot;id&quot;:162,&quot;name&quot;:&quot;2609&quot;},{&quot;id&quot;:53,&quot;name&quot;:&quot;2621&quot;},{&quot;id&quot;:54,&quot;name&quot;:&quot;2721&quot;},{&quot;id&quot;:55,&quot;name&quot;:&quot;\u5176\u5b83&quot;}],&quot;3&quot;:[{&quot;id&quot;:163,&quot;name&quot;:&quot;3A101&quot;},{&quot;id&quot;:164,&quot;name&quot;:&quot;3A102&quot;},{&quot;id&quot;:57,&quot;name&quot;:&quot;3A104&quot;},{&quot;id&quot;:58,&quot;name&quot;:&quot;3A105&quot;},{&quot;id&quot;:165,&quot;name&quot;:&quot;3A106&quot;},{&quot;id&quot;:166,&quot;name&quot;:&quot;3A107&quot;},{&quot;id&quot;:167,&quot;name&quot;:&quot;3A108&quot;},{&quot;id&quot;:168,&quot;name&quot;:&quot;3A109&quot;},{&quot;id&quot;:59,&quot;name&quot;:&quot;3A110&quot;},{&quot;id&quot;:60,&quot;name&quot;:&quot;3A111&quot;},{&quot;id&quot;:61,&quot;name&quot;:&quot;3A112&quot;},{&quot;id&quot;:183,&quot;name&quot;:&quot;3A113&quot;},{&quot;id&quot;:169,&quot;name&quot;:&quot;3A201&quot;},{&quot;id&quot;:64,&quot;name&quot;:&quot;3A202&quot;},{&quot;id&quot;:65,&quot;name&quot;:&quot;3A203&quot;},{&quot;id&quot;:66,&quot;name&quot;:&quot;3A204&quot;},{&quot;id&quot;:170,&quot;name&quot;:&quot;3A205&quot;},{&quot;id&quot;:171,&quot;name&quot;:&quot;3A206&quot;},{&quot;id&quot;:172,&quot;name&quot;:&quot;3A207&quot;},{&quot;id&quot;:173,&quot;name&quot;:&quot;3A208&quot;},{&quot;id&quot;:67,&quot;name&quot;:&quot;3A209&quot;},{&quot;id&quot;:68,&quot;name&quot;:&quot;3A210&quot;},{&quot;id&quot;:69,&quot;name&quot;:&quot;3A211&quot;},{&quot;id&quot;:70,&quot;name&quot;:&quot;3A212&quot;},{&quot;id&quot;:184,&quot;name&quot;:&quot;3A213&quot;},{&quot;id&quot;:174,&quot;name&quot;:&quot;3A301&quot;},{&quot;id&quot;:73,&quot;name&quot;:&quot;3A302&quot;},{&quot;id&quot;:74,&quot;name&quot;:&quot;3A303&quot;},{&quot;id&quot;:75,&quot;name&quot;:&quot;3A304&quot;},{&quot;id&quot;:76,&quot;name&quot;:&quot;3A305&quot;},{&quot;id&quot;:175,&quot;name&quot;:&quot;3A306&quot;},{&quot;id&quot;:77,&quot;name&quot;:&quot;3A307&quot;},{&quot;id&quot;:78,&quot;name&quot;:&quot;3A308&quot;},{&quot;id&quot;:79,&quot;name&quot;:&quot;3A309&quot;},{&quot;id&quot;:80,&quot;name&quot;:&quot;3A310&quot;},{&quot;id&quot;:81,&quot;name&quot;:&quot;3A311&quot;},{&quot;id&quot;:82,&quot;name&quot;:&quot;3A312&quot;},{&quot;id&quot;:176,&quot;name&quot;:&quot;3A313&quot;},{&quot;id&quot;:177,&quot;name&quot;:&quot;3A314&quot;},{&quot;id&quot;:85,&quot;name&quot;:&quot;3A315&quot;},{&quot;id&quot;:86,&quot;name&quot;:&quot;3A316&quot;},{&quot;id&quot;:87,&quot;name&quot;:&quot;3A317&quot;},{&quot;id&quot;:185,&quot;name&quot;:&quot;3A318&quot;},{&quot;id&quot;:178,&quot;name&quot;:&quot;3A401&quot;},{&quot;id&quot;:90,&quot;name&quot;:&quot;3A402&quot;},{&quot;id&quot;:152,&quot;name&quot;:&quot;3A403&quot;},{&quot;id&quot;:91,&quot;name&quot;:&quot;3A404&quot;},{&quot;id&quot;:92,&quot;name&quot;:&quot;3A405&quot;},{&quot;id&quot;:93,&quot;name&quot;:&quot;3A406&quot;},{&quot;id&quot;:94,&quot;name&quot;:&quot;3A407&quot;},{&quot;id&quot;:179,&quot;name&quot;:&quot;3A408&quot;},{&quot;id&quot;:180,&quot;name&quot;:&quot;3A409&quot;},{&quot;id&quot;:181,&quot;name&quot;:&quot;3A410&quot;},{&quot;id&quot;:182,&quot;name&quot;:&quot;3A411&quot;},{&quot;id&quot;:186,&quot;name&quot;:&quot;3A412&quot;},{&quot;id&quot;:98,&quot;name&quot;:&quot;3B101&quot;},{&quot;id&quot;:99,&quot;name&quot;:&quot;3B102&quot;},{&quot;id&quot;:100,&quot;name&quot;:&quot;3B103&quot;},{&quot;id&quot;:101,&quot;name&quot;:&quot;3B201&quot;},{&quot;id&quot;:102,&quot;name&quot;:&quot;3B202&quot;},{&quot;id&quot;:103,&quot;name&quot;:&quot;3C101&quot;},{&quot;id&quot;:104,&quot;name&quot;:&quot;3C102&quot;},{&quot;id&quot;:105,&quot;name&quot;:&quot;3C103&quot;},{&quot;id&quot;:106,&quot;name&quot;:&quot;3C104&quot;},{&quot;id&quot;:107,&quot;name&quot;:&quot;3C201&quot;},{&quot;id&quot;:108,&quot;name&quot;:&quot;3C202&quot;},{&quot;id&quot;:109,&quot;name&quot;:&quot;3C203&quot;},{&quot;id&quot;:110,&quot;name&quot;:&quot;3C204&quot;},{&quot;id&quot;:111,&quot;name&quot;:&quot;3C301&quot;},{&quot;id&quot;:112,&quot;name&quot;:&quot;3C302&quot;},{&quot;id&quot;:113,&quot;name&quot;:&quot;3C303&quot;},{&quot;id&quot;:114,&quot;name&quot;:&quot;3C304&quot;},{&quot;id&quot;:115,&quot;name&quot;:&quot;\u5176\u5b83&quot;}],&quot;4&quot;:[{&quot;id&quot;:116,&quot;name&quot;:&quot;5102&quot;},{&quot;id&quot;:117,&quot;name&quot;:&quot;5103&quot;},{&quot;id&quot;:118,&quot;name&quot;:&quot;5104&quot;},{&quot;id&quot;:119,&quot;name&quot;:&quot;5105&quot;},{&quot;id&quot;:120,&quot;name&quot;:&quot;5106&quot;},{&quot;id&quot;:121,&quot;name&quot;:&quot;5107&quot;},{&quot;id&quot;:122,&quot;name&quot;:&quot;5201&quot;},{&quot;id&quot;:123,&quot;name&quot;:&quot;5202&quot;},{&quot;id&quot;:124,&quot;name&quot;:&quot;5203&quot;},{&quot;id&quot;:125,&quot;name&quot;:&quot;5204&quot;},{&quot;id&quot;:126,&quot;name&quot;:&quot;5205&quot;},{&quot;id&quot;:127,&quot;name&quot;:&quot;5206&quot;},{&quot;id&quot;:128,&quot;name&quot;:&quot;5207&quot;},{&quot;id&quot;:129,&quot;name&quot;:&quot;5301&quot;},{&quot;id&quot;:130,&quot;name&quot;:&quot;5302&quot;},{&quot;id&quot;:131,&quot;name&quot;:&quot;5303&quot;},{&quot;id&quot;:132,&quot;name&quot;:&quot;5304&quot;},{&quot;id&quot;:133,&quot;name&quot;:&quot;5305&quot;},{&quot;id&quot;:134,&quot;name&quot;:&quot;5306&quot;},{&quot;id&quot;:135,&quot;name&quot;:&quot;5307&quot;},{&quot;id&quot;:136,&quot;name&quot;:&quot;5401&quot;},{&quot;id&quot;:137,&quot;name&quot;:&quot;5402&quot;},{&quot;id&quot;:138,&quot;name&quot;:&quot;5403&quot;},{&quot;id&quot;:139,&quot;name&quot;:&quot;5404&quot;},{&quot;id&quot;:140,&quot;name&quot;:&quot;5405&quot;},{&quot;id&quot;:141,&quot;name&quot;:&quot;5406&quot;},{&quot;id&quot;:142,&quot;name&quot;:&quot;5407&quot;},{&quot;id&quot;:143,&quot;name&quot;:&quot;5501&quot;},{&quot;id&quot;:144,&quot;name&quot;:&quot;5502&quot;},{&quot;id&quot;:145,&quot;name&quot;:&quot;5503&quot;},{&quot;id&quot;:146,&quot;name&quot;:&quot;5504&quot;},{&quot;id&quot;:147,&quot;name&quot;:&quot;5505&quot;},{&quot;id&quot;:148,&quot;name&quot;:&quot;5506&quot;},{&quot;id&quot;:149,&quot;name&quot;:&quot;5507&quot;},{&quot;id&quot;:150,&quot;name&quot;:&quot;\u5176\u5b83&quot;}],&quot;builds&quot;:[{&quot;id&quot;:1,&quot;bid&quot;:1,&quot;name&quot;:&quot;\u4e00\u6559&quot;},{&quot;id&quot;:2,&quot;bid&quot;:2,&quot;name&quot;:&quot;\u4e8c\u6559&quot;},{&quot;id&quot;:3,&quot;bid&quot;:3,&quot;name&quot;:&quot;\u4e09\u6559&quot;},{&quot;id&quot;:4,&quot;bid&quot;:5,&quot;name&quot;:&quot;\u4e94\u6559&quot;}]}</em>
+        </div>
+        <input type="hidden" id="form__token" name="form[_token]" value="q2xVDZzVDrDj4xEwALTSziEhCFrmvPBDOA3C0RVlSoM" /></form>
+    </div>
+    </td></tr>
+    </table>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <script>
+        var ie = -1;
+    </script>
+    <!--[if lte IE 8]>
+        <script>
+            ie = 8;
+        </script>
+    <![endif]-->
+    <!--[if IE 9]>
+        <script>
+            ie = 9;
+        </script>
+    <![endif]-->
+                    <script type="text/javascript" src="/js/3c04639.js"></script>
+                    <script type="text/javascript" src="/js/b943495.js"></script>
+        </body>
+</html>

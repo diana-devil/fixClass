@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>报修查看</title>
+</head>
+
+<body>
+    <h1>报修获取</h1>
+<form action="/fix/fix_teacher/" method="get">
+    报修教室 <input type="text" name="class_id" /><br>
+    <input type="submit" value="报修获取" >
+</form>
+<table border="1">
+    <thead>
+        <th>报修时间</th>
+        <th>报修学生学号</th>
+        <th>联系电话</th>
+        <th>报修教室</th>
+        <th>报修具体内容</th>
+    </thead>
+    <br>
+    <tbody>
+        {% for line in data %}
+        <tr>
+            <td>{{ line.time }}</td>
+            <td >{{ line.stu_id }}</td>
+            <td>{{ line.phone }}</td>
+            <td align="center">{{ line.class_id }}</td>
+            <td>{{ line.msg }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+
+</body>
+</html>

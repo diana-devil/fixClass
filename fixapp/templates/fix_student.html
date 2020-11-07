@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>教室报修</title>
+</head>
+<body>
+
+    <h1>提交报修内容</h1>
+<form action="/fix/fix_student/" method="post">
+    {% csrf_token %}
+    我的学号 <input type="text" name="stu_id" /><br>
+    联系方式  <input type="text" name="phone" /><br>
+    报修教室 <input type="text" name="class_id" /><br>
+    报修内容 <input type="text" name="msg" /><br>
+    <input type="submit" value="报修提交" />
+</form>
+
+
+
+</body>
+</html>
